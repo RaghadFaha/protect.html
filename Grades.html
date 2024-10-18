@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Grades</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #00529B;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        footer {
+            background-color: #00529B;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        form input, form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #00529B;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003B6F;
+        }
+
+       
+        .logo {
+            max-width: 150px;
+            height: auto; 
+        }
+    </style>
+</head>
+
+<body>
+ 
+    <header>
+        <img src="logo.png" alt="University Logo" class="logo"> 
+        <h1>جامعة الإمام محمد بن سعود الإسلامية</h1>
+        <nav>
+            <ul>
+                <li><a href="#Grades">Grades</a></li>
+                <li><a href="#StudentName.html">StudentName</a></li>
+                <li><a href="#StudentGrade.html">StudentGrade</a></li>
+                   
+            </ul>
+        </nav>
+    </header>
+
+<section id="grades">
+    <h2>Grades</h2>
+    <form id="grades-form">
+        <label for="student-name">Student Name:</label>
+        <input type="text" id="student-name" name="student-name" required>
+        <label for="grade">Grade:</label>
+        <input type="text" id="grade" name="grade" required>
+        <button type="button" onclick="addGrade()">Add Grade</button>
+    </form>
+    <ul id="grades-list"></ul>
+</section>
+
+<section id="StudentName" class="content-box">
+    <a href="StudentName.html"><h2>Student Name</h2></a>
+</section>
+
+<section id="StudentGrade" class="content-box">
+    <a href="StudentGrade.html"><h2>Student Grade</h2></a>
+</section>
+
+</body>
+</html>

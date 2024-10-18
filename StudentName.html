@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Names</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #00529B;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        footer {
+            background-color: #00529B;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        form input, form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #00529B;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003B6F;
+        }
+
+       
+        .logo {
+            max-width: 150px; 
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+ 
+    <header>
+        <img src="logo.png" alt="University Logo" class="logo"> 
+        <h1>جامعة الإمام محمد بن سعود الإسلامية</h1>
+        <nav>
+            <ul>
+                <li><a href="#Student">Student Names</a></li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 50px;
+        }
+        .class-container {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+        button {
+            margin-top: 10px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض أسماء الطلاب</title>
+    <script>
+        function displayStudents() {
+            // تعريف قائمة الطلاب للشعبة 419 والشعبة 420
+            const students419 = ["ريم أحمد", "لمى سلمان", "ديم عبدالله"];
+            const students420 = ["سلمى محمد", "سارة عمر", "لمى سعود"];
+
+            // جلب العنصر الذي يحتوي على جدول الطلاب وتفريغ محتواه قبل إضافة الأسماء
+            const studentTableBody = document.getElementById("studentTableBody");
+            studentTableBody.innerHTML = ""; // تفريغ الجدول قبل إضافة الأسماء
+
+            // جلب قيمة رقم الشعبة من المستخدم
+            const sectionNumber = document.getElementById("sectionNumber").value;
+
+            // مصفوفة لتخزين الطلاب المحددين بناءً على رقم الشعبة
+            let selectedStudents = [];
+
+            // استخدام switch لتحديد الطلاب بناءً على رقم الشعبة
+            switch (sectionNumber) {
+                case "419":
+                    selectedStudents = students419; // تعيين الطلاب لشعبة 419
+                    break;
+                case "420":
+                    selectedStudents = students420; // تعيين الطلاب لشعبة 420
+                    break;
+                default:
+                    // عرض رسالة خطأ إذا تم إدخال رقم شعبة غير صحيح
+                    alert("الرجاء إدخال رقم شعبة صحيح (419 أو 420).");
+                    return;
+            }
+
+            // عرض أسماء الطلاب في الجدول
+            selectedStudents.forEach(function(student) {
+                const row = document.createElement("tr");
+                const cell = document.createElement("td");
+                cell.textContent = student;
+                row.appendChild(cell);
+                studentTableBody.appendChild(row);
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <h1>اختر الشعبة لعرض أسماء الطلاب</h1>
+
+    <label for="sectionNumber">رقم الشعبة:</label>
+    <select id="sectionNumber">
+        <option value="">اختر الشعبة</option>
+        <option value="419">شعبة 419</option>
+        <option value="420">شعبة 420</option>
+    </select>
+    <button onclick="displayStudents()">عرض الأسماء</button>
+
+    <h2>أسماء الطلاب:</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>الاسم</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody">
+
+        </tbody>
+    </table>
+
+</body>
+</html>

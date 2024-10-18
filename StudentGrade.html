@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Grades</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #00529B;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        footer {
+            background-color: #00529B;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        form input, form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #00529B;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003B6F;
+        }
+
+       
+        .logo {
+            max-width: 150px; 
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+ 
+    <header>
+        <img src="logo.png" alt="University Logo" class="logo"> 
+        <h1>جامعة الإمام محمد بن سعود الإسلامية</h1>
+        <nav>
+            <ul>
+                <li><a href="#StudentG">Student Grades</a></li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 50px;
+        }
+        .class-container {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+        button {
+            margin-top: 10px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>إدخال أسماء الطالبات لشعبتي 419 و 420</h2>
+
+    <div class="class-container">
+        <h3>شعبة 419</h3>
+        <label for="student419">اسم الطالبة:</label><br>
+        <input type="text" id="student419" name="student419" placeholder="أدخل اسم الطالبة"><br>
+        <label for="grade419">درجة الطالبة:</label><br>
+        <input type="number" id="grade419" name="grade419" placeholder="أدخل درجة الطالبة"><br>
+        <button onclick="addStudent('419')">إضافة</button>
+        <p><strong>أسماء الطالبات في شعبة 419:</strong></p>
+        <ul id="list419"></ul>
+    </div>
+
+    <div class="class-container">
+        <h3>شعبة 420</h3>
+        <label for="student420">اسم الطالبة:</label><br>
+        <input type="text" id="student420" name="student420" placeholder="أدخل اسم الطالبة"><br>
+        <label for="grade420">درجة الطالبة:</label><br>
+        <input type="number" id="grade420" name="grade420" placeholder="أدخل درجة الطالبة"><br>
+        <button onclick="addStudent('420')">إضافة</button>
+        <p><strong>أسماء الطالبات في شعبة 420:</strong></p>
+        <ul id="list420"></ul>
+    </div>
+
+    <script>
+        function addStudent(classNumber) {
+            var studentName = document.getElementById('student' + classNumber).value;
+            var studentGrade = document.getElementById('grade' + classNumber).value;
+            
+            if (studentName && studentGrade) {
+                var list = document.getElementById('list' + classNumber);
+                var listItem = document.createElement('li');
+                listItem.textContent = studentName + ' - الدرجة: ' + studentGrade;
+                list.appendChild(listItem);
+                
+                document.getElementById('student' + classNumber).value = ''; // Clear the input
+                document.getElementById('grade' + classNumber).value = ''; // Clear the grade input
+            } else {
+                alert('يرجى إدخال اسم الطالبة والدرجة.');
+            }
+        }
+    </script>
+</body>
+</html>
